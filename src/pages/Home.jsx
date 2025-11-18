@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Banner from "../components/Banner";
 import products from "../data/products";
-import "./Home.css";
+import "./home.css";
 import CategoryBar from "../components/categorybar";
 import { Link } from "react-router-dom";
 
