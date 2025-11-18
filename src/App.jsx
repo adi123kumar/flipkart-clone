@@ -5,7 +5,7 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ProductDetails from "./pages/ProductDetails";
-import Checkout from "./pages/CheckOut";
+import Checkout from "./pages/Checkout";
 import Payments from "./pages/payment";
 import ProductList from "./pages/ProductList";
 import ProtectedRoute from "./components/ProtectedRoute";
