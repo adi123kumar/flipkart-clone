@@ -3,15 +3,16 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC5IgNNhmE3DsjThujVLVcYCXrt9T4Jey4",
-  authDomain: "flipkar-clone-123.firebaseapp.com",
-  projectId: "flipkar-clone-123",
-  storageBucket: "flipkar-clone-123.firebasestorage.app",
-  messagingSenderId: "862787988351",
-  appId: "1:862787988351:web:af247ad27d3c451789084a"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const providerGoogle = new GoogleAuthProvider();
 export const db = getFirestore(app);
+
