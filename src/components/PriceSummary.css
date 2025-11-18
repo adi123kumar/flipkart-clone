@@ -1,0 +1,49 @@
+.price-summary {
+  background: white;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+  color: #212121;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.price-summary h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #878787;
+  margin-bottom: 10px;
+}
+
+.price-row,
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.discount {
+  color: #388e3c;
+  font-weight: 500;
+}
+
+.free {
+  color: #388e3c;
+}
+
+.total-row {
+  font-size: 15px;
+  font-weight: 600;
+  border-top: 1px dashed #ddd;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.savings {
+  color: #388e3c;
+  font-size: 13px;
+  margin-top: 15px;
+  font-weight: 500;
+}

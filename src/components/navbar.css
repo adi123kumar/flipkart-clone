@@ -1,0 +1,140 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  color: #212121;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-left .logo {
+  color: #2874f0;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-left .logo h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.nav-left .logo:hover {
+  opacity: 0.8;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 550px;
+  margin: 0 40px;
+  background-color: #f0f5ff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: #212121;
+}
+
+.search-btn {
+  padding: 10px 16px;
+  background-color: #2874f0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.search-btn:hover {
+  background-color: #1863d6;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-right a,
+.nav-right span {
+  color: #212121;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-right a:hover,
+.nav-right button:hover {
+  color: #2874f0;
+}
+
+.nav-right .nav-login-btn,
+.nav-right .nav-logout-btn {
+  background-color: #2874f0 ;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-login-btn:hover,
+.nav-logout-btn:hover {
+  background-color: #1863d6;
+}
+
+.cart-btn {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.nav-seller {
+  color: #2874f0;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .nav-center {
+    display: none;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .nav-left .logo h2 {
+    font-size: 18px;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+}

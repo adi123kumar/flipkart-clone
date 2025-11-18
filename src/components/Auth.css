@@ -1,0 +1,153 @@
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f3f6;
+  font-family: "Roboto", sans-serif;
+}
+
+.auth-left {
+  background-color: #2874f0;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 8px 0 0 8px;
+  height: 500px;
+  max-width: 380px;
+}
+
+.auth-left h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.auth-left p {
+  font-size: 15px;
+  color: #dbe5ff;
+  line-height: 1.5;
+}
+
+.auth-image {
+  width: 100%;
+  max-width: 240px;
+  margin-top: 40px;
+}
+
+.auth-right {
+  background-color: #fff;
+  flex: 1.2;
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 8px 8px 0;
+  height: 500px;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.auth-btn {
+  background-color: #fb641b;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.auth-btn:hover {
+  background-color: #f05108;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  color: #555;
+}
+
+.auth-link {
+  color: #2874f0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.social-login {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.google-btn,
+.microsoft-btn {
+  border: 1px solid #ddd;
+  background: white;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.google-btn:hover,
+.microsoft-btn:hover {
+  background: #f7f7f7;
+}
+
+.auth-terms {
+  font-size: 12px;
+  color: #878787;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.auth-terms .auth-link {
+  color: #2874f0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.auth-terms .auth-link:hover {
+  text-decoration: underline;
+}
