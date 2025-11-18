@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../firebase";
 import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../redux/cartSlice";
+import { auth } from "../firebase";        
+import { onAuthStateChanged, signOut } from "firebase/auth";  
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
@@ -13,7 +13,10 @@ export default function Navbar() {
   const dispatch = useDispatch();
 
   const items = useSelector((state) => state.cart?.items || []);
-  const cartCount = items.reduce((total, item) => total + (item.quantity || 0), 0);
+  const cartCount = items.reduce(
+    (total, item) => total + (item.quantity || 0),
+    0
+  );
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -78,9 +81,11 @@ export default function Navbar() {
             Login
           </Link>
         )}
+
         <Link to="/cart" className="cart-btn">
           🛒 Cart ({cartCount})
         </Link>
+
         <a href="#" className="nav-seller">
           Become a Seller
         </a>
