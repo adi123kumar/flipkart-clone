@@ -14,10 +14,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px;
+  padding: 50px 60px;
   border-radius: 8px 0 0 8px;
   height: 500px;
-  max-width: 380px;
+  max-width: 300px;
 }
 
 .auth-left h1 {
@@ -40,14 +40,14 @@
 
 .auth-right {
   background-color: #fff;
-  flex: 1.2;
+  flex: 1;
   padding: 50px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 0 8px 8px 0;
   height: 500px;
-  max-width: 400px;
+  max-width: 380px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 

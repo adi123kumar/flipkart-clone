@@ -33,8 +33,8 @@ export default function Home() {
         <div className="product-slider" ref={sliderRef}>
           {products.map((item) => (
             <Link to={`/product/${item.id}`} key={item.id} className="slide-item">
-              <img src={item.image} alt={item.name} />
-              <p className="slide-name">{item.name}</p>
+              <img src={item.image} alt={item.cat} />
+              <p className="slide-name">{item.cat}</p>
               <p className="slide-price">From ₹{item.price}</p>
             </Link>
           ))}

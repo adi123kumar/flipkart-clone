@@ -42,36 +42,32 @@ export default function ProductDetails() {
       <CategoryBar variant="product" showicons={false} />
 
       <div className="product-container">
-        <div className="left-column">
+        <div className="thumb-column">
+          {images.map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt="thumb"
+              className={`thumb-img ${mainImg === img ? "active-thumb" : ""}`}
+              onClick={() => setMainImg(img)}
+            />
+          ))}
+        </div>
 
-          <div className="image-thumbnails">
-            {images.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt="thumb"
-                onClick={() => setMainImg(img)}
-                className={`thumb-img ${mainImg === img ? "active-thumb" : ""}`}
-              />
-            ))}
-          </div>
+        <div className="image-column">
+          <img src={mainImg} alt={product.name} className="main-image" />
 
-          <div className="main-image">
-            <img src={mainImg} alt={product.name} />
-
-            <div className="button-row">
-              <button className="cart-btn" onClick={handleAddToCart}>
-                🛒 ADD TO CART
-              </button>
-              <button className="buy-btn" onClick={handleBuyNow}>
-                ⚡ BUY NOW
-              </button>
-            </div>
+          <div className="button-row">
+            <button className="cart-btn" onClick={handleAddToCart}>
+              🛒 ADD TO CART
+            </button>
+            <button className="buy-btn" onClick={handleBuyNow}>
+              ⚡ BUY NOW
+            </button>
           </div>
         </div>
 
         <div className="right-column">
-
           <div className="title-row">
             <h2 className="product-title">{product.name}</h2>
             <button className="share-btn">➦ Share</button>
@@ -79,7 +75,9 @@ export default function ProductDetails() {
 
           <div className="rating-section">
             <span className="rating">{product.rating.toFixed(1)} ★</span>
-            <span className="reviews">{product.ratingCount.toLocaleString()} Ratings</span>
+            <span className="reviews">
+              {product.ratingCount.toLocaleString()} Ratings
+            </span>
             {product.rating > 4 && (
               <img
                 src="https://www.adgully.com/img/800/68264_fl.png.jpg"
@@ -90,18 +88,43 @@ export default function ProductDetails() {
           </div>
 
           <div className="price-block2">
-            <div className="product-price">₹{finalPrice.toLocaleString()}</div>
-            <div className="old-price">₹{product.oldPrice.toLocaleString()}</div>
+            <div className="product-price">
+              ₹{finalPrice.toLocaleString()}
+            </div>
+            <div className="old-price">
+              ₹{product.oldPrice.toLocaleString()}
+            </div>
             <div className="discount-text">{product.discount}% off</div>
+          </div>
+
+          <div className="fee-delivery-inline">
+            <div className="protect-fee">+ ₹19 Protect Promise Fee <span className="learn-link">Learn more</span></div>
+            <div className="secure-delivery">Secure delivery by {product.delivery}</div>
           </div>
 
           <div className="offers-section">
             <h4>Available offers</h4>
             <ul>
-              <li>Bank Offer 5% cashback on Axis Bank Flipkart Debit Card</li>
-              <li>Bank Offer 5% cashback on Flipkart SBI Credit Card</li>
-              <li>Bank Offer Flat ₹50 off on Flipkart Bajaj Finserv EMI Card</li>
-              <li>Bank Offer 10% off on Canara Bank Credit Card EMI</li>
+              <li>
+                <span className="offer-icon" aria-hidden>✔</span>
+                <span className="offer-text">Bank Offer5% cashback on Axis Bank Flipkart Debit Card up to ₹750</span>
+                <span className="tc">T&C</span>
+              </li>
+              <li>
+                <span className="offer-icon" aria-hidden>✔</span>
+                <span className="offer-text">Bank Offer5% cashback on Flipkart SBI Credit Card upto ₹4,000 per calendar quarter</span>
+                <span className="tc">T&C</span>
+              </li>
+              <li>
+                <span className="offer-icon" aria-hidden>✔</span>
+                <span className="offer-text">Bank OfferFlat ₹50 off on Flipkart Bajaj Finserv Insta EMI Card. Min Booking Amount: ₹2,500</span>
+                <span className="tc">T&C</span>
+              </li>
+              <li>
+                <span className="offer-icon" aria-hidden>✔</span>
+                <span className="offer-text">Special PriceGet extra 90% off</span>
+                <span className="tc">T&C</span>
+              </li>
             </ul>
           </div>
 
@@ -112,12 +135,14 @@ export default function ProductDetails() {
             </div>
 
             <div className="seller-block">
-              <div className="seller-label">Seller</div>
+              <div className="seller-label">Seller:</div>
               <div className="seller-name">
                 {product.seller}
                 <span className="seller-rating">4.3★</span>
               </div>
-              <div className="seller-details">7 Days Brand Support • GST invoice available</div>
+              <div className="seller-details">
+                7 Days Brand Support • GST invoice available
+              </div>
             </div>
           </div>
 
@@ -156,7 +181,6 @@ export default function ProductDetails() {
             <h4>Description</h4>
             <p>{product.description}</p>
           </div>
-
         </div>
       </div>
     </div>

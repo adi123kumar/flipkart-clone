@@ -1,11 +1,12 @@
 const products = [
   {
     id: 1,
-    name: "Wireless Headphones",
+    name: "Leaf Bass Pro Bluetooth Wireless Over Ear Headphones with Mic, 50 Hours Battery Life, Dual Paring, Super Soft Cushions and Deep Bass",
     price: 2999,
     oldPrice: 5999,
     discount: 25,
     rating: 4.1,
+    cat:"wireless Headphones",
     ratingCount: 9821,
     images: [
       "https://www.leafstudios.in/cdn/shop/files/1_a43c5e0b-3a47-497d-acec-b4764259b10e_800x.png?v=1750486829",
@@ -26,10 +27,11 @@ const products = [
   },
   {
     id: 2,
-    name: "Smartwatch",
+    name: "Fire-Boltt Hurricane 33.02mm (1.3) Curved Glass Display with BT Calling, 100+ Sports Modes Smartwatch  (Grey Strap, Free Size)",
     price: 2299,
     oldPrice: 4600,
     rating: 4.1,
+     cat:"Smartwatches",
     ratingCount: 9821,
     discount: 25,
     images: [
@@ -51,11 +53,12 @@ const products = [
   },
   {
     id: 3,
-    name: "Gaming Mouse",
+    name: "Logitech G502 Hero High Performance Wired USB Gaming Mouse, Hero 25K Sensor, 25,600 DPI, RGB, Adjustable Weight",
     price: 799,
     oldPrice: 1600,
     rating: 3.9,
     ratingCount: 980,
+     cat:"Gaming mouse",
     discount: 25,
     images: [
       "https://www.mytrendyphone.eu/images/6D-4-Speed-DPI-RGB-Gaming-Mouse-G5-Black-05042021-01.webp",
@@ -76,10 +79,11 @@ const products = [
   },
   {
     id: 4,
-    name: "Bluetooth Speaker",
+    name: "boAt Stone 352 Bluetooth Speaker with 10W RMS Stereo",
     price: 1199,
     oldPrice: 2400,
     rating: 3.6,
+      cat:"Bluetooth Speaker",
     ratingCount: 821,
     discount: 25,
     images: [
@@ -101,10 +105,11 @@ const products = [
   },
   {
     id: 5,
-    name: "Power Bank",
+    name: "Power Bank 10,000 mAh-2 USB Ports, Micro USB & C-type Input, LED Torch, Charge Indicator",
     price: 999,
     oldPrice: 1999,
     rating: 4.5,
+      cat:"Power Banks",
     ratingCount: 91,
     discount: 25,
     images: [
@@ -126,10 +131,11 @@ const products = [
   },
   {
     id: 6,
-    name: "Lenovo Laptop",
+    name: "IdeaPad Slim 3i 13th Gen, 38.86cms - Intel i5 (Luna Grey)",
     price: 59999,
     oldPrice: 65999,
     rating: 3.1,
+      cat:"Laptops",
     ratingCount: 982,
     discount: 25,
     images: [

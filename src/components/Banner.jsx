@@ -6,14 +6,16 @@ import Slider from "react-slick";
 export default function Banner() {
   const banners = [
     "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/1338bd4fc60390d8.jpg?q=80",
-    "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/74f0ad81e44e6e6f.jpg?q=80"
+    "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/74f0ad81e44e6e6f.jpg?q=80",
+    "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/66faf3950cda0b7a.png?q=80",
+    "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/78c3cfa787e8acbe.jpg?q=80"
   ];
 
   const settings = {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2500,
     slidesToShow: 1,
     arrows: true,
     slidesToScroll: 1
