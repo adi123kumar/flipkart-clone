@@ -9,11 +9,16 @@ import Checkout from "./pages/Checkout";
 import Payments from "./pages/payment";
 import ProductList from "./pages/ProductList";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <Router>
       <Navbar />
+
+      <ToastContainer position="top-right" autoClose={2500} />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductList />} />

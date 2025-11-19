@@ -1,7 +1,16 @@
 import AuthForm from "../components/AuthForm";
 import "../components/Auth.css";
+import { toast } from "react-toastify";
 
 export default function Signup() {
+  const handleSuccess = () => {
+    toast.success("Signup Successful");
+  };
+
+  const handleError = () => {
+    toast.error("Signup Failed");
+  };
+
   return (
     <div className="auth-page">
       <div className="auth-left">
@@ -19,6 +28,8 @@ export default function Signup() {
           type="signup"
           title="Create your account"
           buttonText="Sign Up"
+          onSuccess={handleSuccess}
+          onError={handleError}
         />
 
         <p className="auth-terms">

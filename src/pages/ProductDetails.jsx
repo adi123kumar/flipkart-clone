@@ -6,6 +6,7 @@ import "./ProductDetail.css";
 import CategoryBar from "../components/categorybar";
 import { useDispatch } from "react-redux";
 import { addToCart, setBuyNow } from "../redux/cartSlice";
+import { toast } from "react-toastify";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -19,6 +20,7 @@ export default function ProductDetails() {
   const images = product.images || (product.image ? [product.image] : []);
   const [mainImg, setMainImg] = useState(images[0] || product.image || "");
   const [exchangeApplied, setExchangeApplied] = useState(false);
+
   const exchangeDeduction = 500;
   const finalPrice = exchangeApplied
     ? Number(product.price) - exchangeDeduction
@@ -26,10 +28,12 @@ export default function ProductDetails() {
 
   const handleAddToCart = () => {
     dispatch(addToCart({ ...product, price: finalPrice, quantity: 1 }));
+    toast.success("Added to Cart");
   };
 
   const handleBuyNow = () => {
     dispatch(setBuyNow({ ...product, price: finalPrice, quantity: 1 }));
+    toast.success("Redirecting to Checkout");
     navigate("/checkout");
   };
 
@@ -94,10 +98,10 @@ export default function ProductDetails() {
           <div className="offers-section">
             <h4>Available offers</h4>
             <ul>
-              <li>Bank Offer 5% cashback on Axis Bank Flipkart Debit Card up to ₹750 T&C</li>
-              <li>Bank Offer 5% cashback on Flipkart SBI Credit Card upto ₹4,000 per calendar quarter T&C</li>
-              <li>Bank Offer Flat ₹50 off on Flipkart Bajaj Finserv Insta EMI Card. Min Booking Amount: ₹2,500 T&C</li>
-              <li>Bank Offer 10% off upto ₹1500 on Canara Bank Credit Card and Credit Card EMI. Min Txn Value: ₹4,990 T&C</li>
+              <li>Bank Offer 5% cashback on Axis Bank Flipkart Debit Card</li>
+              <li>Bank Offer 5% cashback on Flipkart SBI Credit Card</li>
+              <li>Bank Offer Flat ₹50 off on Flipkart Bajaj Finserv EMI Card</li>
+              <li>Bank Offer 10% off on Canara Bank Credit Card EMI</li>
             </ul>
           </div>
 
@@ -113,9 +117,7 @@ export default function ProductDetails() {
                 {product.seller}
                 <span className="seller-rating">4.3★</span>
               </div>
-              <div className="seller-details">
-                7 Days Brand Support • GST invoice available
-              </div>
+              <div className="seller-details">7 Days Brand Support • GST invoice available</div>
             </div>
           </div>
 

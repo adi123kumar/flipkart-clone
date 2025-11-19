@@ -1,9 +1,14 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile
+} from "firebase/auth";
 import { auth } from "../firebase";
 import "./Auth.css";
 import SocialLoginButtons from "./SocialLoginButtons";
+import { toast } from "react-toastify";
 
 export default function AuthForm({ type, title, buttonText }) {
   const navigate = useNavigate();
@@ -20,15 +25,17 @@ export default function AuthForm({ type, title, buttonText }) {
       if (type === "signup") {
         const userCred = await createUserWithEmailAndPassword(auth, email, password);
         if (name) await updateProfile(userCred.user, { displayName: name });
-        alert("Signup successful!");
+
+        toast.success("Signup successful");
         navigate("/login");
       } else {
         await signInWithEmailAndPassword(auth, email, password);
-        alert("Login successful!");
+        toast.success("Login successful");
         navigate("/");
       }
     } catch (err) {
       setError(err.message);
+      toast.error(err.message);
     }
   };
 

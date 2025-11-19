@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, updateQuantity, saveForLater, moveToCart, removeSaved } from "../redux/cartSlice";
 import { Link } from "react-router-dom";
 import "./cart.css";
+import { toast } from "react-toastify";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ export default function Cart() {
   return (
     <div className="cart-page">
       <div className="cart-body">
+
         <div className="cart-left">
           <div className="cart-header">
             <h3>From Saved Addresses</h3>
@@ -31,17 +33,19 @@ export default function Cart() {
                   <img src={item.image} alt={item.name} className="product-image" />
                   <div className="quantity-controls">
                     <button
-                      onClick={() =>
-                        dispatch(updateQuantity({ id: item.id, qty: item.quantity - 1 }))
-                      }
+                      onClick={() => {
+                        dispatch(updateQuantity({ id: item.id, qty: item.quantity - 1 }));
+                        toast.info("Quantity Updated");
+                      }}
                     >
                       -
                     </button>
                     <span>{item.quantity}</span>
                     <button
-                      onClick={() =>
-                        dispatch(updateQuantity({ id: item.id, qty: item.quantity + 1 }))
-                      }
+                      onClick={() => {
+                        dispatch(updateQuantity({ id: item.id, qty: item.quantity + 1 }));
+                        toast.info("Quantity Updated");
+                      }}
                     >
                       +
                     </button>
@@ -66,10 +70,23 @@ export default function Cart() {
                     <span className="discount">{item.discount}</span>
                   </p>
                   <div className="action-buttons">
-                    <button onClick={() => dispatch(saveForLater(item.id))} className="save-btn">
+                    <button
+                      onClick={() => {
+                        dispatch(saveForLater(item.id));
+                        toast.info("Moved to Saved Items");
+                      }}
+                      className="save-btn"
+                    >
                       Save for later
                     </button>
-                    <button onClick={() => dispatch(removeFromCart(item.id))} className="remove-btn">
+
+                    <button
+                      onClick={() => {
+                        dispatch(removeFromCart(item.id));
+                        toast.error("Removed from Cart");
+                      }}
+                      className="remove-btn"
+                    >
                       Remove
                     </button>
                   </div>
@@ -93,6 +110,7 @@ export default function Cart() {
           {savedItems.length > 0 && (
             <div className="saved-for-later">
               <h3>Saved for later</h3>
+
               {savedItems.map((item) => (
                 <div className="cart-item" key={item.id}>
                   <div className="product-image-section">
@@ -109,14 +127,20 @@ export default function Cart() {
 
                     <div className="action-buttons">
                       <button
-                        onClick={() => dispatch(moveToCart(item))}
+                        onClick={() => {
+                          dispatch(moveToCart(item));
+                          toast.success("Moved to Cart");
+                        }}
                         className="save-btn"
                       >
                         Move to Cart
                       </button>
 
                       <button
-                        onClick={() => dispatch(removeSaved(item.id))}
+                        onClick={() => {
+                          dispatch(removeSaved(item.id));
+                          toast.error("Removed");
+                        }}
                         className="remove-btn"
                       >
                         Remove
